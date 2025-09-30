@@ -285,7 +285,7 @@ const execute = async ({
   const sequences = getSequences({
     demoPath,
     playerId,
-  }); // only last 2 sequences
+  });
   console.log(`Found ${sequences.length} sequences`);
 
   console.log(`Recording sequences to: ${outputDir}`);
@@ -313,7 +313,7 @@ const execute = async ({
       seq.endTick
     );
 
-    const inPath = seq.clipPath; // ensure this path is real (rename if csdm used a different pattern)
+    const inPath = seq.clipPath;
     const outPath = inPath.replace(/\.mp4$/i, ".overlay.mp4");
 
     await burnOverlayForClip(inPath, outPath, runs);
