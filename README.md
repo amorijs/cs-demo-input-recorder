@@ -2,12 +2,6 @@
 
 A powerful CS:GO/CS2 demo recorder that automatically extracts gameplay sequences and overlays movement input visualization for enhanced analysis and content creation.
 
-## Support
-
-If you find this tool useful and would like to support its development, consider buying me a coffee! ☕
-
-[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/chrisamori)
-
 ## Features
 
 - 🎮 **Automatic sequence detection** - Intelligently identifies and extracts meaningful gameplay segments
@@ -16,6 +10,29 @@ If you find this tool useful and would like to support its development, consider
 - 🔄 **Interactive CLI** - User-friendly drag-and-drop interface for easy operation
 - 🎬 **High-quality output** - 60fps H.264 video with audio preservation
 - 🧹 **Automatic cleanup** - Cleans up temporary files after processing
+
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Interactive Mode (Recommended)](#interactive-mode-recommended)
+  - [Command Line Mode](#command-line-mode)
+- [How It Works](#how-it-works)
+- [Output](#output)
+- [Overlay Visualization](#overlay-visualization)
+- [Configuration](#configuration)
+- [Example Output](#example-output)
+- [Troubleshooting](#troubleshooting)
+  - [Common Issues](#common-issues)
+  - [Performance Tips](#performance-tips)
+- [Known Bugs](#known-bugs)
+- [Development](#development)
+  - [Project Structure](#project-structure)
+  - [Available Scripts](#available-scripts)
+- [Credits](#credits)
+- [Support](#support)
 
 ## Prerequisites
 
@@ -225,17 +242,15 @@ bun run build        # Build for production
 bun run compile      # Create standalone executable
 ```
 
-## License
-
-Personal Use License - See LICENSE file for details.
-
-## Contributing
-
-This project is currently for personal use. For commercial use inquiries, please contact the author.
-
 ## Credits
 
 - Built with [Bun](https://bun.sh/) runtime
 - Uses [@laihoe/demoparser2](https://github.com/laihoe/demoparser2) for demo parsing
 - Powered by [CS Demo Manager](https://cs-demo-manager.com/) for video recording
 - Video processing with [FFmpeg](https://ffmpeg.org/)
+
+## Support
+
+If you find this tool useful and would like to support its development, consider buying me a coffee! ☕
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/chrisamori)

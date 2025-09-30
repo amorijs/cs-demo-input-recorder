@@ -40,7 +40,7 @@
   "scripts": {
     "dev": "bun run src/index.ts",
     "build": "bun build src/cli.ts --outdir dist --target node --minify",
-    "compile": "bun build ./src/cli_interactive.ts --compile --outfile cs_demo_input_recorder",
+    "compile": "bun build ./src/cli_interactive.ts --compile --outfile ./dist/cs_demo_input_recorder",
     "prepare": "npm run build"
   }
 }
