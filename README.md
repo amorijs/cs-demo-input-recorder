@@ -15,8 +15,7 @@ A powerful CS:GO/CS2 demo recorder that automatically extracts gameplay sequence
 
 - [Features](#features)
 - [Prerequisites](#prerequisites)
-- [Installation & Usage](#installation-&-usage)
-  - [Interactive Mode (Recommended)](#interactive-mode-recommended)
+- [Installation and Usage](#installation-and-usage)
   - [Command Line Mode](#command-line-mode)
 - [How It Works](#how-it-works)
 - [Output](#output)
@@ -65,7 +64,7 @@ Checking dependencies...
 🎉 All dependencies are installed!
 ```
 
-## Installation & Usage
+## Installation and Usage
 
 1. **Download the latest build** from the [releases page](../../releases)
 
