@@ -2,6 +2,8 @@
 
 A powerful CS:GO/CS2 demo recorder that automatically extracts gameplay sequences and overlays movement input visualization for enhanced analysis and content creation.
 
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/3529122c-1a4e-443b-9fd1-b36a6cda8049" />
+
 ## Features
 
 - 🎮 **Automatic sequence detection** - Intelligently identifies and extracts meaningful gameplay segments
