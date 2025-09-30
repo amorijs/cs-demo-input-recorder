@@ -1,0 +1,46 @@
+{
+  "name": "cs-demo-input-recorder",
+  "version": "1.0.0",
+  "description": "CS:GO/CS2 demo recorder with movement overlay visualization",
+  "module": "index.ts",
+  "type": "module",
+  "bin": {
+    "demorec": "./dist/cli.js"
+  },
+  "files": [
+    "dist/**/*",
+    "assets/**/*",
+    "README.md",
+    "package.json"
+  ],
+  "keywords": [
+    "csgo",
+    "cs2",
+    "demo",
+    "recording",
+    "esports",
+    "gaming"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "opus-codec": "^0.0.86",
+    "puppeteer": "^24.22.2"
+  },
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "build": "bun build src/cli.ts --outdir dist --target node --minify",
+    "compile": "bun build ./src/cli_interactive.ts --compile --outfile cs_demo_input_recorder",
+    "prepare": "npm run build"
+  }
+}
