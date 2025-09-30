@@ -15,8 +15,7 @@ A powerful CS:GO/CS2 demo recorder that automatically extracts gameplay sequence
 
 - [Features](#features)
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Installation & Usage](#installation)
   - [Interactive Mode (Recommended)](#interactive-mode-recommended)
   - [Command Line Mode](#command-line-mode)
 - [How It Works](#how-it-works)
@@ -66,7 +65,7 @@ Checking dependencies...
 🎉 All dependencies are installed!
 ```
 
-## Installation
+## Installation & Usage
 
 1. **Download the latest build** from the [releases page](../../releases)
 
@@ -82,7 +81,7 @@ Checking dependencies...
 
 ### Command Line Mode
 
-For scripting or advanced usage:
+For scripting or advanced usage (requires Bun or Deno):
 
 ```bash
 bun run src/cli_base.ts -- --demoPath "path/to/demo.dem" --outputDir "output" --userId "76561198055776914"
