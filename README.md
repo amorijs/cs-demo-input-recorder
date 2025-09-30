@@ -70,13 +70,13 @@ Checking dependencies...
 
 1. **Download the latest build** from the [releases page](../../releases)
 
+   - Always scan `.exe` files you download
+
 2. **Extract the executable** to a directory of your choice
 
    - Recommended: create a new blank directory as the program will save files in the same location
 
 3. **Run the program**: Double-click `cs_demo_input_recorder.exe` and follow the instructions - it should be self-explanatory
-
-   - Always scan `.exe` files you download
 
 4. **Output location**: A new directory called "output" will be automatically created in the same directory after running the program. This is where temporary files and your final video will be saved
 
