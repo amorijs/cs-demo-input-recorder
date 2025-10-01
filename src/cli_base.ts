@@ -34,5 +34,5 @@ if (
 await execute({
   demoPath: values.demoPath!,
   outputDir: values.outputDir!,
-  playerId: values.userId,
+  playerId: values.userId!,
 });

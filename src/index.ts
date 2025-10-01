@@ -270,7 +270,7 @@ const execute = async ({
   demoPath,
   outputDir,
 }: {
-  playerId?: string;
+  playerId: string;
   demoPath: string;
   outputDir: string;
 }): Promise<string> => {
