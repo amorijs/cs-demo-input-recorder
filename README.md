@@ -85,15 +85,22 @@ Checking dependencies...
 ## Installation and Usage
 
 1. **Make sure you've read the [IMPORTANT](#IMPORTANT) section**
+
 2.  **Download the latest build** from the [releases page](../../releases)
+   
    - Always scan `.exe` files you download
+     
 3. **Extract the file** to a folder of your choice
+   
    - Recommended: create a new blank folder as the program will save files in the same location
+  
 4. **Make sure CS and faceit AC is closed**
+
 5. **Run the program**: Double-click `cs_demo_input_recorder.exe` and follow the instructions you see in the command prompt (it should be self explanatory from here).
+  
 6. **Make sure CS closes after the process is complete**. This should be done automatically, but if not be sure to close it.
 
-### Command Line Mode
+### Command Line Mode (Advanced users only)
 
 For scripting or advanced usage (requires Bun or Deno):
 
