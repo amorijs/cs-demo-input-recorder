@@ -266,7 +266,7 @@ const recordSequences = async ({
 };
 
 const execute = async ({
-  playerId = "76561198055776914",
+  playerId,
   demoPath,
   outputDir,
 }: {
