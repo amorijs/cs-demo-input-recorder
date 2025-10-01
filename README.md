@@ -4,6 +4,22 @@ CS2 demo to video tool that automatically extracts gameplay sequences and overla
 
 ![ezgif-4536771f1fc70e](https://github.com/user-attachments/assets/2436df1f-de4a-48f2-a990-e8b44e418403)
 
+## IMPORTANT
+
+This tool uses [HLAE](https://github.com/advancedfx/advancedfx) which is **VAC BANNABLE** if used in a vac secured server.
+
+This tool uses [cs-demo-manager](https://cs-demo-manager.com/) to record videos, which launches your game with the `-insecure` flag, which means you will not be able to join any vac secured server after it launches your game.
+
+That being said, only the "happy path" has been tested. We have not done extensive testing of "what if I do this" or "what if I do that". The happy path for reference:
+
+- Make sure CS is closed, and faceit or any other anti-cheat is not running (we have not tested what happens when faceit AC is running)
+- Let the tool run, it should automatically close your game when it's complete.
+- If anything goes wrong while the tool is running just close your game and kill the tool process.
+
+If you mess up (it's not complicated) **we are not responsible**, and while we may try to offer support in this situation, we are not obligated.
+
+If you want to be extra safe, you can log into a "dummy" steam account when recording demos
+
 ## Features
 
 - 🎮 **Automatic sequence detection** - Intelligently identifies and extracts meaningful gameplay segments
