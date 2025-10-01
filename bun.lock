@@ -4,11 +4,13 @@
     "": {
       "name": "demo-movement",
       "dependencies": {
+        "@laihoe/demoparser2": "^0.39.1",
         "opus-codec": "^0.0.86",
         "puppeteer": "^24.22.2",
       },
       "devDependencies": {
         "@types/bun": "latest",
+        "@types/node": "^24.0.0",
       },
       "peerDependencies": {
         "typescript": "^5",
@@ -19,6 +21,28 @@
     "@babel/code-frame": ["@babel/code-frame@7.27.1", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.27.1", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg=="],
 
     "@babel/helper-validator-identifier": ["@babel/helper-validator-identifier@7.27.1", "", {}, "sha512-D2hP9eA+Sqx1kBZgzxZh0y1trbuU+JoDkiEwqhQ36nodYqJwyEIhPSdMNd7lOm/4io72luTPWH20Yda0xOuUow=="],
+
+    "@laihoe/demoparser2": ["@laihoe/demoparser2@0.39.1", "", { "optionalDependencies": { "@laihoe/demoparser2-android-arm-eabi": "0.39.1", "@laihoe/demoparser2-android-arm64": "0.39.1", "@laihoe/demoparser2-darwin-arm64": "0.39.1", "@laihoe/demoparser2-darwin-universal": "0.39.1", "@laihoe/demoparser2-darwin-x64": "0.39.1", "@laihoe/demoparser2-freebsd-x64": "0.39.1", "@laihoe/demoparser2-linux-arm-gnueabihf": "0.39.1", "@laihoe/demoparser2-linux-arm64-gnu": "0.39.1", "@laihoe/demoparser2-linux-arm64-musl": "0.39.1", "@laihoe/demoparser2-linux-x64-gnu": "0.39.1", "@laihoe/demoparser2-linux-x64-musl": "0.39.1", "@laihoe/demoparser2-win32-arm64-msvc": "0.39.1", "@laihoe/demoparser2-win32-ia32-msvc": "0.39.1", "@laihoe/demoparser2-win32-x64-msvc": "0.39.1" } }, "sha512-v3tpcSHW35dr9F1sMk4yOiV4bKZG7Ez+NGpf8oB/gjOKKH2IghisrBjDNyZn+glfTLjzhIz2gbfvX3a0TOPyFQ=="],
+
+    "@laihoe/demoparser2-android-arm-eabi": ["@laihoe/demoparser2-android-arm-eabi@0.39.1", "", { "os": "android", "cpu": "arm" }, "sha512-Pkvm8ukmHxf5vzcgY1U1hpjRDTJBp0VCYcgC2Z/fbu/VIC16qwi8mR4DukS2xgbiy8F9KNTyCfXMTQxWvIX7Ug=="],
+
+    "@laihoe/demoparser2-android-arm64": ["@laihoe/demoparser2-android-arm64@0.39.1", "", { "os": "android", "cpu": "arm64" }, "sha512-Gz36cCcoiUBiaTEClR0R5JbhsdUbY4G/ol9/zAW+oNQvUhL+9JxrLC7kA1GtRle7BBfsQvJcTzGQAN9Wq+o0Gg=="],
+
+    "@laihoe/demoparser2-darwin-arm64": ["@laihoe/demoparser2-darwin-arm64@0.39.1", "", { "os": "darwin", "cpu": "arm64" }, "sha512-h4bqYL7RM/CbGIBzZspimef3BygCKeQH4ctnqd3w7rPmezcm8eG+0BFZYksFtI8p9EIE/lGrGsizRD5GPknabg=="],
+
+    "@laihoe/demoparser2-linux-arm-gnueabihf": ["@laihoe/demoparser2-linux-arm-gnueabihf@0.39.1", "", { "os": "linux", "cpu": "arm" }, "sha512-dqOsWBxUnCUGIX6Lxf0PKhK5q6hkCKU9J3ay8R4DIKOTgFfFJujouFS6jzpyu37+T0oGn/57gQCBREz3bhyWSA=="],
+
+    "@laihoe/demoparser2-linux-arm64-gnu": ["@laihoe/demoparser2-linux-arm64-gnu@0.39.1", "", { "os": "linux", "cpu": "arm64" }, "sha512-ZFeqvYT3Gd1qr7vHaRbmHibrsa71JR7Q65dtBQQbodJJfELhjEymxTkr8y3icus+TKm4daRzUc9tJ/gCndtdTg=="],
+
+    "@laihoe/demoparser2-linux-arm64-musl": ["@laihoe/demoparser2-linux-arm64-musl@0.39.1", "", { "os": "linux", "cpu": "arm64" }, "sha512-QMqbNB26+fMFnaO/MreK7VGdY06AqD/l46rRc7KHY8egJPbOkrgc6fZzny8CvgnSRl3/xHOqNdeojTxjOlzb2w=="],
+
+    "@laihoe/demoparser2-linux-x64-gnu": ["@laihoe/demoparser2-linux-x64-gnu@0.39.1", "", { "os": "linux", "cpu": "x64" }, "sha512-qW5IePmWnjNWrKzmgH978S32zuVI48WbaVXXOfzqHaCjQU+Xh0efTh9mn0fZkey6HQ1WYx7PEMHdKAIutBWk0Q=="],
+
+    "@laihoe/demoparser2-linux-x64-musl": ["@laihoe/demoparser2-linux-x64-musl@0.39.1", "", { "os": "linux", "cpu": "x64" }, "sha512-XJRlm4LtDl1OPfBpYPA1sA/BNURgWOUUkCPwOY3qxgZ864KeMr0L4c9KQGQG5NXQf4lU7Akth4HElZFrqFEn9g=="],
+
+    "@laihoe/demoparser2-win32-arm64-msvc": ["@laihoe/demoparser2-win32-arm64-msvc@0.39.1", "", { "os": "win32", "cpu": "arm64" }, "sha512-ODbcTHdK30b+flC9zfKF0eccMcN9zFXUx7UjubMR8AL9lIZ0TRf9YL6tIFCVe8uryl/seXUH6TRnDaUVbCIIXg=="],
+
+    "@laihoe/demoparser2-win32-x64-msvc": ["@laihoe/demoparser2-win32-x64-msvc@0.39.1", "", { "os": "win32", "cpu": "x64" }, "sha512-LOZA7yVxFdHyZNFON4kOzV63rIQTfd8C8xTBKUKcvaQwdMKGc1TWQyenSv8oq8traPMMm2PcKEx7jc/GCuR9bw=="],
 
     "@puppeteer/browsers": ["@puppeteer/browsers@2.10.10", "", { "dependencies": { "debug": "^4.4.3", "extract-zip": "^2.0.1", "progress": "^2.0.3", "proxy-agent": "^6.5.0", "semver": "^7.7.2", "tar-fs": "^3.1.0", "yargs": "^17.7.2" }, "bin": { "browsers": "lib/cjs/main-cli.js" } }, "sha512-3ZG500+ZeLql8rE0hjfhkycJjDj0pI/btEh3L9IkWUYcOrgP0xCNRq3HbtbqOPbvDhFaAWD88pDFtlLv8ns8gA=="],
 

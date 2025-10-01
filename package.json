@@ -28,18 +28,19 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/node": "^20.0.0"
+    "@types/node": "^24.0.0"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "@laihoe/demoparser2": "^0.39.1",
     "opus-codec": "^0.0.86",
     "puppeteer": "^24.22.2"
   },
   "scripts": {
     "dev": "bun run src/index.ts",
-    "build": "bun build src/cli.ts --outdir dist --target node --minify",
+    "build": "bun build src/cli_base.ts --outdir dist --target bun --minify",
     "compile": "bun build ./src/cli_interactive.ts --compile --outfile ./dist/cs_demo_input_recorder",
     "prepare": "npm run build"
   }
