@@ -86,13 +86,9 @@ Checking dependencies...
 
 1. **Make sure you've read the [IMPORTANT](#IMPORTANT) section**
 
-2.  **Download the latest build** from the [releases page](../../releases)
-   
-   - Always scan `.exe` files you download
+2.  **Download the latest build** from the [releases page](../../releases). Always scan `.exe` files you download
      
-3. **Extract the file** to a folder of your choice
-   
-   - Recommended: create a new blank folder as the program will save files in the same location
+3. **Extract the file** to a folder of your choice. Recommended: create a new blank folder as the program will save files in the same location
   
 4. **Make sure CS and faceit AC is closed**
 
