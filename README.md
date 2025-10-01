@@ -60,12 +60,12 @@ Before using this tool, you need to install the following dependencies:
 
    - Download and install from: https://cs-demo-manager.com/docs/installation
    - CSDM handles demo parsing and initial video recording
-   - Requires PostgreSQL database for demo analysis
+   - Requires PostgreSQL database for demo analysis. This will be completed if you follow the steps in the link above.
 
 2. **FFmpeg**
-   - Download from: https://ffmpeg.org/
+   - Download and install from: https://ffmpeg.org/
    - Used for video processing and overlay rendering
-   - Make sure `ffmpeg` is available in your system PATH
+   - Make sure `ffmpeg` is available in your system PATH. This should be done automatically, but if not: [google it :)](https://www.google.com/search?q=how+to+add+ffmpeg+to+path&rlz=1C1ONGR_enUS1091US1091&oq=how+to+add+ffmpeg&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBggBEEUYOTIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCTU2NTNqMGoxNagCDLACAfEFXCvFSsvkR70&sourceid=chrome&ie=UTF-8)
 
 ### Verification
 
@@ -84,17 +84,14 @@ Checking dependencies...
 
 ## Installation and Usage
 
-1. **Download the latest build** from the [releases page](../../releases)
-
+1. **Make sure you've read the [IMPORTANT](#IMPORTANT) section**
+2.  **Download the latest build** from the [releases page](../../releases)
    - Always scan `.exe` files you download
-
-2. **Extract the executable** to a directory of your choice
-
-   - Recommended: create a new blank directory as the program will save files in the same location
-
-3. **Run the program**: Double-click `cs_demo_input_recorder.exe` and follow the instructions - it should be self-explanatory
-
-4. **Output location**: A new directory called "output" will be automatically created in the same directory after running the program. This is where temporary files and your final video will be saved
+3. **Extract the file** to a folder of your choice
+   - Recommended: create a new blank folder as the program will save files in the same location
+4. **Make sure CS and faceit AC is closed**
+5. **Run the program**: Double-click `cs_demo_input_recorder.exe` and follow the instructions you see in the command prompt (it should be self explanatory from here).
+6. **Make sure CS closes after the process is complete**. This should be done automatically, but if not be sure to close it.
 
 ### Command Line Mode
 
