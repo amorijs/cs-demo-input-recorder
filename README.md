@@ -245,7 +245,7 @@ bun run compile      # Create standalone executable
 ## Credits
 
 - Built with [Bun](https://bun.sh/) runtime
-- Uses [@laihoe/demoparser2](https://github.com/laihoe/demoparser2) for demo parsing
+- Uses [@laihoe/demoparser](https://github.com/laihoe/demoparser) for demo parsing
 - Powered by [CS Demo Manager](https://cs-demo-manager.com/) for video recording
 - Video processing with [FFmpeg](https://ffmpeg.org/)
 
