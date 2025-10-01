@@ -11,6 +11,7 @@ const { values } = parseArgs({
       type: "string",
     },
     userId: { type: "string" },
+    rounds: { type: "string", default: "" },
     selfRun: { type: "boolean", default: true },
   },
   strict: true,
@@ -31,8 +32,11 @@ if (
   process.exit(1);
 }
 
+const optionalArgs = { rounds: values.rounds };
+
 await execute({
   demoPath: values.demoPath!,
   outputDir: values.outputDir!,
   playerId: values.userId!,
+  optionalArgs: optionalArgs
 });

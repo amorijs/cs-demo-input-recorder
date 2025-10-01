@@ -145,6 +145,10 @@ async function main() {
     );
   }
 
+  let rounds = await question(
+    `\n\nSpecify the round numbers you want to record separated with commas \n\ne.g. 1,3,6 \n\nLeave it blank if you want to record full game: `
+  )
+
   const player = playerInfo[selectedPlayerNumber - 1]!;
   const playerId = player.steamid;
 
@@ -160,7 +164,7 @@ async function main() {
 
   console.log("\n🚀 Starting processing...");
   const outputFilePath = path.normalize(
-    await execute({ demoPath, outputDir, playerId })
+    await execute({ demoPath, outputDir, playerId, optionalArgs: {rounds} })
   );
 
   // console.log("\n✅ Complete! Press any key to exit...");

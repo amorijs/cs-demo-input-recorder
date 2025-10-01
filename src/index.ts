@@ -176,6 +176,19 @@ const getSequences = ({
   return sequences;
 };
 
+const filterSequences = ({
+  sequences,
+  roundFilter
+}: {
+  sequences: [number, number][]
+  roundFilter?: number[]
+}): [number, number][] => {
+  if (roundFilter === undefined || roundFilter.length === 0 || (roundFilter.length === 1 && roundFilter[0] === 0))
+    return sequences;
+
+  return sequences.filter((_, id) => roundFilter.includes(id+1));
+};
+
 type RecordedSequence = {
   clipPath: string;
   startTick: number;
@@ -269,10 +282,12 @@ const execute = async ({
   playerId,
   demoPath,
   outputDir,
+  optionalArgs
 }: {
   playerId: string;
   demoPath: string;
   outputDir: string;
+  optionalArgs: Dict<string>;
 }): Promise<string> => {
   await checkDeps();
 
@@ -288,11 +303,15 @@ const execute = async ({
   });
   console.log(`Found ${sequences.length} sequences`);
 
+  const roundFilter = optionalArgs["rounds"]?.split(',').map(Number);
+  const requestSequences = filterSequences({sequences, roundFilter});
+  console.log(`${requestSequences.length} rounds to be recorded`);
+
   console.log(`Recording sequences to: ${outputDir}`);
   const recordedSequences = await recordSequences({
     demoPath,
     playerId,
-    sequences,
+    sequences: requestSequences,
     outputPath: outputDir,
   });
   console.log(`Finished recording sequences`);
