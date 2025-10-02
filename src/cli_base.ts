@@ -1,5 +1,6 @@
 import { parseArgs } from "util";
 import { execute } from "./index.ts";
+import { updateConfig } from "./config.ts";
 
 const { values } = parseArgs({
   args: Bun.argv.slice(2), // Skip 'bun' and script name
@@ -32,11 +33,6 @@ if (
   process.exit(1);
 }
 
-const optionalArgs = { rounds: values.rounds };
+updateConfig(values);
 
-await execute({
-  demoPath: values.demoPath!,
-  outputDir: values.outputDir!,
-  playerId: values.userId!,
-  optionalArgs: optionalArgs
-});
+await execute();

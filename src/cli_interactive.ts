@@ -5,6 +5,7 @@ import path from "path";
 import * as readline from "readline";
 import { execute } from "./index.ts";
 import { checkDeps } from "./utils/os/checkDeps.ts";
+import { updateConfig } from "./config.ts";
 
 // Helper function to open files/directories cross-platform
 const openPath = async (path: string) => {
@@ -157,6 +158,7 @@ async function main() {
   // Make sure output directory exists
   await $`mkdir -p ${outputDir}`;
 
+  updateConfig({ demoPath, outputDir, userId: playerId, rounds });
   console.log(`\n✅ Configuration:`);
   console.log(`Demo Path: ${demoPath}`);
   console.log(`Output Directory: ${outputDir}`);
@@ -164,7 +166,7 @@ async function main() {
 
   console.log("\n🚀 Starting processing...");
   const outputFilePath = path.normalize(
-    await execute({ demoPath, outputDir, playerId, optionalArgs: {rounds} })
+    await execute()
   );
 
   // console.log("\n✅ Complete! Press any key to exit...");

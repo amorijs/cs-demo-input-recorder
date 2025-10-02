@@ -9,6 +9,7 @@ import { checkDeps } from "./utils/os/checkDeps";
 import { cleanupAfterConcat } from "./utils/os/cleanup";
 import { concatOverlayClips } from "./utils/video/concat";
 import { buildRunsForClip, burnOverlayForClip } from "./utils/video/overlay";
+import { getConfig } from "./config";
 
 const getPlayerNumbers = (
   demoPath: string
@@ -278,18 +279,13 @@ const recordSequences = async ({
   return recordedSequences;
 };
 
-const execute = async ({
-  playerId,
-  demoPath,
-  outputDir,
-  optionalArgs
-}: {
-  playerId: string;
-  demoPath: string;
-  outputDir: string;
-  optionalArgs: Dict<string>;
-}): Promise<string> => {
+const execute = async (): Promise<string> => {
   await checkDeps();
+
+  const config = getConfig();
+  const demoPath = config.demoPath;
+  const outputDir = config.outputDir;
+  const playerId = config.userId;
 
   const now = Date.now();
   // Confirm demo exists in csdm
@@ -303,7 +299,7 @@ const execute = async ({
   });
   console.log(`Found ${sequences.length} sequences`);
 
-  const roundFilter = optionalArgs["rounds"]?.split(',').map(Number);
+  const roundFilter = config["rounds"].split(',').map(Number);
   const requestSequences = filterSequences({sequences, roundFilter});
   console.log(`${requestSequences.length} rounds to be recorded`);
 
