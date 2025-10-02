@@ -38,6 +38,19 @@ export const getConfig = (): Readonly<AppConfig> => {
   return currentConfig as AppConfig;
 };
 
+function filterUndefinedValues<T extends Record<string, any>>(settings: T): Partial<T> {
+  return Object.keys(settings).reduce((acc, key) => {
+    const value = settings[key];
+    if (value !== undefined && value !== null) {
+      // Keep false, 0, "", or any other defined value
+      acc[key as keyof T] = value;
+    }
+    return acc;
+  }, {} as Partial<T>);
+}
+
 export const updateConfig = (newSettings: Partial<AppConfig>): void => {
-  currentConfig = { ...currentConfig, ...newSettings };
+  const definedSettings = filterUndefinedValues(newSettings);
+
+  currentConfig = { ...currentConfig, ...definedSettings };
 };
