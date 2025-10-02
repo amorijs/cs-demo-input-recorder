@@ -303,6 +303,11 @@ const execute = async (): Promise<string> => {
   const requestSequences = filterSequences({sequences, roundFilter});
   console.log(`${requestSequences.length} rounds to be recorded`);
 
+  if (requestSequences.length == 0) {
+    console.log(`Nothing to record. Process took ${(Date.now() - now) / 1000}s`);
+    return "";
+  }
+
   console.log(`Recording sequences to: ${outputDir}`);
   const recordedSequences = await recordSequences({
     demoPath,
