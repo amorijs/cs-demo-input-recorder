@@ -8,7 +8,7 @@ CS2 demo to video tool that automatically extracts gameplay sequences and overla
 
 This tool uses [HLAE](https://github.com/advancedfx/advancedfx) which is **VAC BANNABLE** if used in a vac secured server.
 
-This tool uses [cs-demo-manager](https://cs-demo-manager.com/) + HLAE to record videos, which launches your game with the `-insecure` flag, which prevents you from joining any vac secured server after it launches your game. Of course, once the game closes and you relaunch the game normally, you can join a vac secured server.
+This tool uses [cs-demo-manager](https://cs-demo-manager.com/) + HLAE to record videos. It always launches your game with the `-insecure` flag, which will prevent you from joining any vac secured server while it is running (this is a good thing). Of course, once the game closes and you relaunch the game normally, you can join any vac secured server.
 
 That being said, only the "happy path" has been tested. We have not done extensive testing of "what if I do this" or "what if I do that". The happy path for reference:
 
