@@ -13,6 +13,7 @@ const { values } = parseArgs({
     },
     userId: { type: "string" },
     rounds: { type: "string", default: "" },
+    hideInactive: { type: "boolean", default: false},
     selfRun: { type: "boolean", default: true },
   },
   strict: true,

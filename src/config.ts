@@ -3,6 +3,7 @@ interface AppConfig {
   outputDir: string;
   userId: string;
   rounds: string;
+  hideInactive: boolean;
   selfRun: boolean;
 }
 
@@ -11,6 +12,7 @@ let currentConfig: Partial<AppConfig> = {
   outputDir: undefined,
   userId: undefined,
   rounds: "",
+  hideInactive: false,
   selfRun: false
 }
 

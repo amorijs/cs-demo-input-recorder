@@ -3,6 +3,7 @@ import { writeFileSync } from "fs";
 import path from "path";
 import { TICKRATE } from "../../constants";
 import type { ButtonName } from "../demo/buttons";
+import { getConfig } from "../../config";
 
 type TickRec = { tick: number; buttons: ButtonName[] };
 type Run = { btn: ButtonName; t0: number; t1: number }; // seconds within this clip
@@ -168,8 +169,9 @@ function runsToFilter(runs: Run[]) {
 function buildFilterGraphForClip(runs: Run[]) {
   const base = staticLayerFilter();
   const active = runsToFilter(runs);
+  const config = getConfig();
   // format to rgba so alpha blending is consistent
-  return `[0:v]format=rgba,${base}${active ? "," + active : ""}[vout]`;
+  return `[0:v]format=rgba${config.hideInactive ? "" : "," + base}${active ? "," + active : ""}[vout]`;
 }
 
 export async function burnOverlayForClip(

@@ -148,7 +148,16 @@ async function main() {
 
   let rounds = await question(
     `\n\nSpecify the round numbers you want to record separated with commas \n\ne.g. 1,3,6 \n\nLeave it blank if you want to record full game: `
-  )
+  ) || "";
+
+  let hideInactive = await question(
+    `\n\nDo you want to hide inactive keys in the overaly? [y/N]:`
+  ) || "";
+
+  hideInactive = hideInactive.toLowerCase();
+  if (hideInactive === 'y' || hideInactive === 'yes') {
+    updateConfig({ hideInactive: true });
+  }
 
   const player = playerInfo[selectedPlayerNumber - 1]!;
   const playerId = player.steamid;
