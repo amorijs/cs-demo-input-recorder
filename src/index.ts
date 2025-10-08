@@ -97,13 +97,15 @@ const getSequences = ({
         ) === indexA
       );
     })
-    .map((ev, arr) => {
-      // Subtract one from `round_officially_ended` tick to ensure it comes before next `player_spawn`
-      return {
-        ...ev,
-        tick:
-          ev.event_name === "round_officially_ended" ? ev.tick - 1 : ev.tick,
-      };
+    .sort((a, b) => {
+      // Ensure the correct order of events happening in the same tick
+      const priority = { "player_death": -1, "round_officially_ended": 0, "cs_win_panel_match": 1, "player_spawn": 2 };
+
+      if (a.tick == b.tick) {
+        return priority[a.event_name] < priority[b.event_name] ? -1 : 1;
+      }
+
+      return a.tick < b.tick ? -1 : 1;
     });
 
   let roundEndCounter = 0;
