@@ -46,9 +46,11 @@ interface EventType {
   event_name:
     | "player_spawn"
     | "player_death"
+    | "round_start"
     | "round_officially_ended"
     | "cs_win_panel_match";
   tick: number;
+  round?: number;
   user_steamid?: string;
   is_warmup_period?: boolean;
   isLastRound?: boolean;
@@ -67,6 +69,7 @@ const getSequences = ({
       [
         "player_spawn",
         "player_death",
+        "round_start",
         "round_officially_ended",
         "cs_win_panel_match",
       ],
@@ -82,6 +85,7 @@ const getSequences = ({
         isThisPlayer &&
         (ev.event_name === "player_spawn" || ev.event_name === "player_death");
       const isRoundEvent =
+        ev.event_name === "round_start" ||
         ev.event_name === "round_officially_ended" ||
         ev.event_name === "cs_win_panel_match";
 
@@ -99,7 +103,7 @@ const getSequences = ({
     })
     .sort((a, b) => {
       // Ensure the correct order of events happening in the same tick
-      const priority = { "player_death": -1, "round_officially_ended": 0, "cs_win_panel_match": 1, "player_spawn": 2 };
+      const priority = { "player_death": -1, "round_officially_ended": 0, "cs_win_panel_match": 1, "round_start": 2, "player_spawn": 3 };
 
       if (a.tick == b.tick) {
         return priority[a.event_name] < priority[b.event_name] ? -1 : 1;
@@ -107,6 +111,13 @@ const getSequences = ({
 
       return a.tick < b.tick ? -1 : 1;
     });
+
+  let startEvent = 0;
+  events.forEach((ev, id) => {
+    if (ev.event_name === "round_start" && ev.round === 1) {
+      startEvent = id;
+    }
+  });
 
   let roundEndCounter = 0;
   for (let i = events.length - 1; i >= 0; i--) {
@@ -127,15 +138,15 @@ const getSequences = ({
   let spawnTick = -1;
   let finalSequenceAdded = false;
 
-  events.forEach((ev: any, i: number) => {
+  events.slice(startEvent).forEach((ev: any, i: number) => {
     if (finalSequenceAdded) {
       console.log("Final sequence already added, skipping event");
       return;
     }
 
     // Check to see if we should start a sequence
-    if (ev.event_name === "player_spawn") {
-      console.log("Starting sequence");
+    if (ev.event_name === "round_start" || ev.event_name === "player_spawn") {
+      console.log(`Starting sequence -> ${ev.event_name}`);
       spawnTick = ev.tick + 10 * TICKRATE; // add 10 seconds after spawn
       return;
     }
